@@ -3,11 +3,11 @@
 
 INSTALLING Playwright:
 
--IN TERMINAL-
+(Terminal)
 
 Navigate to project folder and enter: `npm init playwright@latest`
 
--VS CODE EXTENSION-
+(VS Code IDE)
 
 Go to Extensions and search Playwright
 
@@ -20,13 +20,26 @@ Select dropdown option that says `Test: Install Playwright`
 RUNNING First Tests:
 
 `npx playwright test` by default will run every test in the ‘tests’ directory of project files one by one in sequential order. 
-To run particular test file, include its filename at the end of the command
 
-Flags for test command:
+To run particular test file:
+
+`npx playwright test landing-page.spec.ts`
+
+Other Flags:
 
 `--ui` Starts the interactive UI mode
 
-`--project=chromium` Runs the tests only on Desktop Chrome (or other browser as specified)
+`--project` to specify browser, i.e.: 
+
+`npx playwright test --project webkit` 
+
+`npx playwright test --project firefox`
+
+And multiple brosers:
+
+`npx playwright test --project webkit --project firefox`
+
+Run last failed test: `npx playwright test --last-failed`
 
 `--debug` Starts the test in debug mode (opening Playwright inspector window)
 
@@ -66,3 +79,12 @@ Record and save to file: `npx playwright codegen --target javascript -o record_e
 Set viewport: `npx playwright codegen --viewport-size=800,600`
 
 Emulate device: `npx playwright codegen --device="iPhone 15"`
+
+Emulate color scheme: `npx playwright codegen --color-scheme=dark playwright.dev`
+
+Emulate geolocation, language and timezone: 
+
+`npx playwright codegen --timezone="Europe/Rome" --geolocation="41.890221,12.492348" --lang="it-IT" bing.com/maps`
+
+TRACE Viewer:
+
