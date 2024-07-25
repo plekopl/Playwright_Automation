@@ -113,3 +113,14 @@ ASSERTIONS
 
 Uses expect functions. Call expect(value) and choose matcher that reflects expectation. 
 
+Different types of assertions:
+
+Generic matchers (toEqual, toContain, toBeTruthy)
+auto-retrying
+non-retying
+negative matchers, e.g.: `expect(value).not.toEqual(0)` for example
+soft assertions: `await expect.soft(page.getByTestId('status')).toHaveText('Success)) -- does not stop test if fails
+custom expect message: `await expect(page.getByText('Name'), 'should be logged in').toBeVisible();`
+
+
+
