@@ -210,3 +210,7 @@ exports.LoginPage = class LoginPage {
     }
 }
 ```
+### API Testing
+
+GET, PUT, POST, DELETE, validate API Respons, Checking response, logs, errors in UI mode.
+
