@@ -226,6 +226,7 @@ test('API GET Request ', async ({request}) => {
 ```
 POST:
 ```
+import { test, expect } from '@playwright/test';
 test('API POST', async ({ request }) => {
     const response = await request.post('https://reqres.in/api/users', {
         data: {
