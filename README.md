@@ -66,11 +66,11 @@ test(‘name of test’, async ({ page }) => {
     await expect(page.toHaveTitle(/Playwright/)
 ```
 
-GENERATING And Recording Tests:
+GENERATING Tests:
 
 `npx playwright codegen`
 
-or `--browser firefox`
+or `npx playwright codegen --browser firefox`
 
 Manually navigate and click through actions. Note output in Playwright inspector. 
 
@@ -107,7 +107,7 @@ Using CSS:
 
 `await page.locator('#login-button').click()`
 
-Playwright inspector can be used here (see codegen/reports/page.pause())
+Playwright inspector can be used here (page.pause()) and 'Explore' in the Playwright inspector.
 
 ASSERTIONS
 
@@ -125,7 +125,46 @@ negative matchers, e.g.: `expect(value).not.toEqual(0)` for example
 
 soft assertions: `await expect.soft(page.getByTestId('status')).toHaveText('Success))` -- does not stop test if fails
 
-custom expect message: `await expect(page.getByText('Name'), 'should be logged in').toBeVisible();`
+custom expect message: `await expect(page.getByText('Name'), 'should be logged in').toBeVisible();` --shows up in reporting
 
+RECORDING Tests
+
+playwright.config.js:
+```
+  use: {
+    video: 'on-first-retry',
+```
+
+HOOKS
+
+beforeALL/afterAll
+
+Declares a beforeAll/afterAll hook that is executed once per worker before or after all tests.
+
+When called in the scope of a test file, runs before/after all tests in the file. When called inside a test.describe() group, runs before/after all tests in the group.
+
+beforeEach/afterEach
+
+Same as above, but with different frequency according to number of tests in spec file.
+
+describe (groups of tests)
+
+Allows you to group series of tests in the same file.
+
+ANNOTATIONS
+
+test.skip()
+
+test.fail()
+
+test.fixme()
+
+test.slow()
+
+test.only()
+
+test.skip()
+
+## PAGE Object Models
 
 
