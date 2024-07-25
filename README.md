@@ -56,3 +56,13 @@ test(‘name of test’, async ({ page }) => {
 RECORDING Tests:
 
 `npx playwright codegen`
+
+or `--browser firefox`
+
+Manually navigate and click through actions. Note output in Playwright inspector. 
+
+Record and save to file: `npx playwright codegen --target javascript -o record_example.js`
+
+Set viewport: `npx playwright codegen --viewport-size=800,600`
+
+Emulate device: `npx playwright codegen --device="iPhone 15"`
