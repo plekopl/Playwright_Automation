@@ -266,6 +266,8 @@ test('API DELETE', async ({ request }) => {
 })
 ```
 
-
 Validate API Response, Checking response, logs, errors in UI mode.
 
+`await expect(response).toBeOK()` //ensures response code between 200 - 299 range
+
+`await expect(response).not.toBeOK()` //ensures opposite (that response is NOT successful)
