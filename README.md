@@ -212,5 +212,23 @@ exports.LoginPage = class LoginPage {
 ```
 ### API Testing
 
-GET, PUT, POST, DELETE, validate API Respons, Checking response, logs, errors in UI mode.
+GET 
+```
+import { test, expect } from '@playwright/test';
+
+test('API GET Request ', async ({request}) => {
+    const response = await request.get('https://reqres.in/api/users/2')
+    expect(response.status()).toBe(200);
+    const text = await response.text();
+    expect(text).toContain('Janet')
+    console.log(await response.json());
+})
+```
+PUT
+
+POST
+
+DELETE
+
+Validate API Response, Checking response, logs, errors in UI mode.
 
