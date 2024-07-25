@@ -241,6 +241,21 @@ test('API POST', async ({ request }) => {
 })
 ```
 PUT
+```
+import { test, expect } from '@playwright/test';
+test('API PUT', async ({ request }) => {
+    const response = await request.put('https://reqres.in/api/users/2', {
+        data: {
+            "name": "petros",
+            "job": "zion resident"
+        }
+    })
+    expect(response.status()).toBe(200);
+    const text = await response.text();
+    expect(text).toContain('petros');
+    console.log(await response.json());
+})
+```
 
 DELETE
 
