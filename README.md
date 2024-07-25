@@ -39,11 +39,11 @@ Include playwright test module in the script: `import { test, expect } from '@pl
 Or: `const {test, expect} = require(‘@playwright/test’)`
 
 Syntax:
-```
-test(‘name of test’, async ({ page }) => {
+
+`test(‘name of test’, async ({ page }) => {
 	await page.goto(‘https://plarwright.dev/')
-	await expect(page.toHaveTitle(/Playwright/)
-```
+	await expect(page.toHaveTitle(/Playwright/)`
+
 
 RECORD Test
 
