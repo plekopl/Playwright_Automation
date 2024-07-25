@@ -141,7 +141,7 @@ playwright.config.js:
 
 ### HOOKS
 
-beforeALL/afterAll
+beforeAll/afterAll
 
 Declares a beforeAll/afterAll hook that is executed once per worker before or after all tests.
 
