@@ -171,7 +171,7 @@ test.skip()
 
 ### PAGE Object Models
 
-Create helper class to encapsulate common selectors in one place for ease of repeated use.
+Creates helper class to encapsulate common selectors in one place for ease of repeated use.
 
 Example - login spec:
 ```
