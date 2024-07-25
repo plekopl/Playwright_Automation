@@ -10,8 +10,11 @@ Navigate to project folder and enter: `npm init playwright@latest`
 2. VS CODE EXTENSION: 
 
 Go to Extensions and search Playwright
+
 Find Playwright by author Microsoft from list and choose ‘install’
+
 Via Command Pallet menu (cmd + shift + P) search for Playwright 
+
 Select dropdown option that says `Test: Install Playwright`
 
 RUNNING First Tests:
