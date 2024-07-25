@@ -22,8 +22,11 @@ To run particular test file, include its filename at the end of the command
 Flags for test command:
 
 `--ui` Starts the interactive UI mode
+
 `--project=chromium` Runs the tests only on Desktop Chrome (or other browser as specified)
+
 `--debug` Starts the test in debug mode (opening Playwright inspector window)
+
 `--workers 3` Starts the test in parallel using three workers 
 
 Reading Reports
