@@ -55,7 +55,7 @@ Run last failed test: `npx playwright test --last-failed`
 
 You can also access report file by navigating to the `playwright-report` directory within project hierarchy.
 
-WRITING First Test:
+### WRITING First Test:
 
 Create filename in tests directory
 
@@ -131,7 +131,7 @@ soft assertions: `await expect.soft(page.getByTestId('status')).toHaveText('Succ
 
 custom expect message: `await expect(page.getByText('Name'), 'should be logged in').toBeVisible();` --shows up in reporting
 
-RECORDING Tests
+### RECORDING Tests
 
 playwright.config.js:
 ```
@@ -171,4 +171,42 @@ test.skip()
 
 ### PAGE Object Models
 
+Create helper class to encapsulate common selectors in one place for ease of repeated use.
 
+Example - login spec:
+```
+import { test, expect } from '@playwright/test';
+import { LoginPage } from '../../pages/login'
+
+test('test', async ({ page }) => {
+
+  const Login = new LoginPage(page)
+
+  await Login.gotoLoginPage()
+  await Login.login('tomsmith', 'SuperSecretPassword!')
+});
+```
+Uses page objects in login.js:
+
+```
+exports.LoginPage = class LoginPage {
+
+    constructor(page) {
+
+        this.page = page
+        this.username_textbox = page.getByLabel('Username')
+        this.password_textbox = page.getByLabel('Password')
+        this.login_button = page.getByRole('button', { name: 'Login' })
+    }
+
+    async gotoLoginPage(){
+        await this.page.goto('https://the-internet.herokuapp.com/login');
+    }
+
+    async login(username, password){
+        await this.username_textbox.fill(username)
+        await this.password_textbox.fill(password)
+        await this.login_button.click()
+    }
+}
+```
