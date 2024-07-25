@@ -53,7 +53,7 @@ test(‘name of test’, async ({ page }) => {
     await expect(page.toHaveTitle(/Playwright/)
 ```
 
-RECORDING Tests:
+GENERATING And Recording Tests:
 
 `npx playwright codegen`
 
