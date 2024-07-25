@@ -1,7 +1,11 @@
 # Playwright Automation
 
+### Tools & Technologies
+* Node JS
+* VS Code
+* JavaScript
 
-INSTALLING Playwright:
+### INSTALLING Playwright:
 
 (Terminal)
 
@@ -17,7 +21,7 @@ Via Command Pallet menu (cmd + shift + P) search for Playwright
 
 Select dropdown option that says `Test: Install Playwright`
 
-RUNNING First Tests:
+### RUNNING First Tests:
 
 `npx playwright test` by default will run every test in the ‘tests’ directory of project files one by one in sequential order. 
 
@@ -45,7 +49,7 @@ Run last failed test: `npx playwright test --last-failed`
 
 `--workers 3` Starts the test in parallel using three workers 
 
-READING Reports:
+### READING Reports:
 
 `npx playwright show-report` will open html report file
 
@@ -66,7 +70,7 @@ test(‘name of test’, async ({ page }) => {
     await expect(page.toHaveTitle(/Playwright/)
 ```
 
-GENERATING Tests:
+### GENERATING Tests:
 
 `npx playwright codegen`
 
@@ -86,14 +90,14 @@ Emulate geolocation, language and timezone:
 
 `npx playwright codegen --timezone="Europe/Rome" --geolocation="41.890221,12.492348" --lang="it-IT" bing.com/maps`
 
-TRACE Viewer:
+### TRACE Viewer:
 
 playwright.config.js:
 `trace: 'on-first-retry',` (default setting) Allows you to inspect DOM snapshots to review details of test runs, including error messages of failed tests. 
 
 `await page.pause()` for debugging in Playwright inspector
 
-LOCATORS:
+### LOCATORS:
 
 Using any object property:
 
@@ -109,7 +113,7 @@ Using CSS:
 
 Playwright inspector can be used here (page.pause()) and 'Explore' in the Playwright inspector.
 
-ASSERTIONS
+### ASSERTIONS
 
 Uses expect functions. Call expect(value) and choose matcher that reflects expectation. 
 
@@ -135,7 +139,7 @@ playwright.config.js:
     video: 'on-first-retry',
 ```
 
-HOOKS
+### HOOKS
 
 beforeALL/afterAll
 
@@ -151,7 +155,7 @@ describe (groups of tests)
 
 Allows you to group series of tests in the same file.
 
-ANNOTATIONS
+### ANNOTATIONS
 
 test.skip()
 
@@ -165,6 +169,6 @@ test.only()
 
 test.skip()
 
-PAGE Object Models
+### PAGE Object Models
 
 
