@@ -41,7 +41,7 @@ Or: `const {test, expect} = require(‘@playwright/test’)`
 Syntax:
 ```
 test(‘name of test’, async ({ page }) => {
-	await page.goto(‘https://playwright.dev/')
+    await page.goto(‘https://playwright.dev/')
     await expect(page.toHaveTitle(/Playwright/)
 ```
 
