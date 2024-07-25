@@ -258,6 +258,14 @@ test('API PUT', async ({ request }) => {
 ```
 
 DELETE
+```
+import { test, expect } from '@playwright/test';
+test('API DELETE', async ({ request }) => {
+    const response = await request.delete('https://reqres.in/api/users/2')
+    expect(response.status()).toBe(204);
+})
+```
+
 
 Validate API Response, Checking response, logs, errors in UI mode.
 
