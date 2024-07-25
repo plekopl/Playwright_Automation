@@ -3,11 +3,11 @@
 
 INSTALLING Playwright:
 
-IN TERMINAL: 
+-IN TERMINAL-
 
 Navigate to project folder and enter: `npm init playwright@latest`
 
-VS CODE EXTENSION: 
+-VS CODE EXTENSION-
 
 Go to Extensions and search Playwright
 
