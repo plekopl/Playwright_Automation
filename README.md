@@ -88,3 +88,28 @@ Emulate geolocation, language and timezone:
 
 TRACE Viewer:
 
+playwright.config.js:
+`trace: 'on-first-retry',` (default setting) Allows you to inspect DOM snapshots to review details of test runs, including error messages of failed tests. 
+
+`await page.pause()` for debugging in Playwright inspector
+
+LOCATORS:
+
+Using any object property:
+
+`await page.locator('id=user-name')`
+
+or: `await page.locator('[id="user-name"]').fill('Einstein')
+
+Using CSS:
+
+#login-button, for exmaple:
+
+`await page.locator('#login-button').click()`
+
+Playwright inspector can be used here (see codegen/reports/page.pause())
+
+ASSERTIONS
+
+Uses expect functions. Call expect(value) and choose matcher that reflects expectation. 
+
