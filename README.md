@@ -1,13 +1,13 @@
 # Playwright Automation
 
 
-TWO ways of installing: 
+INSTALLING Playwright:
 
-1. IN TERMINAL: 
+IN TERMINAL: 
 
 Navigate to project folder and enter: `npm init playwright@latest`
 
-2. VS CODE EXTENSION: 
+VS CODE EXTENSION: 
 
 Go to Extensions and search Playwright
 
@@ -32,13 +32,13 @@ Flags for test command:
 
 `--workers 3` Starts the test in parallel using three workers 
 
-Reading Reports
+READING Reports:
 
 `npx playwright show-report` will open html report file
 
 You can also access report file by navigating to the `playwright-report` directory within project hierarchy.
 
-WRITING First Test
+WRITING First Test:
 
 Create filename in tests directory
 Include playwright test module in the script: `import { test, expect } from '@playwright/test';`
@@ -51,6 +51,6 @@ test(‘name of test’, async ({ page }) => {
     await expect(page.toHaveTitle(/Playwright/)
 ```
 
-RECORD Test
+RECORDING Tests:
 
 `npx playwright codegen`
