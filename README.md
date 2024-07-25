@@ -41,7 +41,9 @@ You can also access report file by navigating to the `playwright-report` directo
 WRITING First Test:
 
 Create filename in tests directory
+
 Include playwright test module in the script: `import { test, expect } from '@playwright/test';`
+
 Or: `const {test, expect} = require(‘@playwright/test’)`
 
 Syntax:
