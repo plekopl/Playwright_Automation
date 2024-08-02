@@ -113,6 +113,23 @@ Using CSS:
 
 Playwright inspector can be used here (page.pause()) and 'Explore' in the Playwright inspector.
 
+NOTE: *XPath does not pierce shadow roots*
+
+Shadow DOM is a web standard that encapsulates a part of the DOM tree so that its elements are hidden and isolated from the main document's DOM tree. 
+
+Shadow DOM creates a boundary that standard DOM traversal mechanisms (like XPath) cannot cross. 
+
+These are the recommended built in locators:
+
+    page.getByRole() to locate by explicit and implicit accessibility attributes.
+    page.getByText() to locate by text content.
+    page.getByLabel() to locate a form control by associated label's text.
+    page.getByPlaceholder() to locate an input by placeholder.
+    page.getByAltText() to locate an element, usually image, by its text alternative.
+    page.getByTitle() to locate an element by its title attribute.
+    page.getByTestId() to locate an element based on its data-testid attribute (other attributes can be configured).
+
+
 ### ASSERTIONS
 
 Uses expect functions. Call expect(value) and choose matcher that reflects expectation. 
